@@ -17,18 +17,15 @@
 }
 
 .bigdaDiv {
-    clip-path: polygon(0 10%, 100% 0, 100% 90%, 0% 100%);
+    clip-path: polygon(0 5%, 100% 0, 100% 95%, 0% 100%);
 }
 
 
 .mainDiv:hover .detailText {
-
     top: 0;
     bottom: 0;
-
 }
+
 .mainDiv:hover .iconText {
-
     bottom: -100px;
-
 }

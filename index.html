@@ -13,13 +13,22 @@
     <link rel="shortcut icon" href="logo.png" type="image/x-icon" />
     <title>Sakya</title>
   </head>
-
+  <script>
+    function toggle() {
+      let nav = document.getElementById("navBar");
+      // console.log(nav)
+      nav.classList.toggle("hide");
+      nav.classList.toggle("show");
+    }
+  </script>
   <body
-    class="h-full bg-gradient-to-b from-[#E4EFFF] to-[#fff] overflow-x-hidden">
+  style="scroll-behavior: smooth;scroll-snap-type: mandatory;"
+    class="h-full bg-gradient-to-b from-[#E4EFFF] to-[#fff] overflow-x-hidden ease-in-out duration-500">
     <!-- navbar section -->
     <section
       class="w-screen fixed top-0 z-50 bg-gradient-to-b from-[#FFF] to-[#E4Efff] flex justify-center items-center">
-      <div class="flex flex-row justify-start gap-32 items-center w-[85%]">
+      <div
+        class="flex flex-row justify-between md:justify-start gap-32 items-center w-[85%]">
         <div class="w-36 md:w-48"><img src="logo.png" alt="Sakya LOGO" /></div>
         <ul
           class="hidden md:flex flex-row justify-between text-[#193766] w-[40%] font-bold dm-sans">
@@ -28,17 +37,40 @@
           <li><a href="#about" target="_self">About Us</a></li>
           <li><a href="#contact" target="_self">Contact Us</a></li>
         </ul>
+        <div class="block md:hidden" onclick="toggle()">
+          <i class="fa-solid fa-bars-staggered text-2xl text-[#193766]"></i>
+        </div>
+      </div>
+    </section>
+    <!-- toggle bar  -->
+    <section
+      id="navBar"
+      class="w-screen hide z-40 h-fit bg-[#193766] mt-[12dvh]  md:hidden flex justify-center items-center ease-in-out duration-500">
+      <div class="flex flex-row justify-start gap-32 items-center py-5 w-[85%]">
+        <ul
+          class="flex flex-col h-full justify-start text-white gap-10 w-[40%] font-bold dm-sans">
+          <li onclick="toggle()"><a href="#home" target="_self">Home</a></li>
+          <li onclick="toggle()">
+            <a href="#services" target="_self">Services</a>
+          </li>
+          <li onclick="toggle()">
+            <a href="#about" target="_self">About Us</a>
+          </li>
+          <li onclick="toggle()">
+            <a href="#contact" target="_self">Contact Us</a>
+          </li>
+        </ul>
       </div>
     </section>
     <!-- landing section -->
     <section
       id="home"
-      class="flex flex-col justify-start items-center h-fit md:h-[90dvh] mt-[10dvh] w-screen bg-right-bottom md:bg-right-top bg-no-repeat bg-contain"
+      class="flex flex-col  justify-start items-center h-fit md:h-[80dvh] mt-[15dvh] w-screen bg-right-bottom md:bg-right-top bg-no-repeat bg-contain"
       style="background-image: url(assets/bgimg/hero-BG1.png)">
       <div
         class="flex flex-col sm:flex-row justify-between items-start gap-10 h-full mt-5 md:mt-10 w-[85%]">
         <div
-          class="flex flex-col justify-start gap-5 md:gap-10 items-start h-full w-full md:w-[60%]">
+          class="flex   flex-col justify-start gap-5 md:gap-10 items-start h-full w-full md:w-[60%]">
           <div class="dm-serif text-4xl md:text-5xl text-[#193766]">
             Top-quality <br /><span class="underline text-[#3B82F6]"
               >Products</span
@@ -56,7 +88,9 @@
           <a href="#contact">
             <button
               class="bg-[#3B82F6] rounded-md py-2 md:py-4 text-white px-3 md:px-5 font-bold dm-sans"
-              style="filter: drop-shadow(0px 18px 45px rgba(25, 55, 102, 0.7))">
+              style="
+                filter: drop-shadow(0px 30px 60px rgba(59, 130, 246, 0.25));
+              ">
               Contact Now
             </button></a
           >
@@ -64,40 +98,55 @@
         <div class="flex flex-col gap-5 h-full">
           <div class="flex gap-5 justify-between items-end">
             <div
-              class="max-w-48 max-h-28 aspect-squre rounded-xl overflow-hidden">
+              class="max-w-48 max-h-28 aspect-squre rounded-xl overflow-hidden"
+              style="
+                filter: drop-shadow(0px 30px 60px rgba(59, 130, 246, 0.25));
+              ">
               <img
-                src="https://img.freepik.com/free-photo/stock-market-exchange-economics-investment-graph_53876-123891.jpg?t=st=1721986934~exp=1721990534~hmac=66c3d624ac70b19667f2856397413a6cf2fde06c0b24548f95f46317d0d0a67a&w=1060"
+                src="assets/imgs/heroPage5.jpg"
                 alt=""
                 class="h-full w-full object-cover" />
             </div>
             <div
-              class="max-w-64 max-h-48 aspect-squre rounded-xl overflow-hidden">
+              class="max-w-64 max-h-48 aspect-squre rounded-xl overflow-hidden"
+              style="
+                filter: drop-shadow(0px 30px 60px rgba(59, 130, 246, 0.25));
+              ">
               <img
-                src="https://img.freepik.com/free-photo/business-person-futuristic-business-environment_23-2150970179.jpg?t=st=1721986511~exp=1721990111~hmac=7189d19e309442049cda9c054f747739e2aade48f485983f64417749e71fbe9c&w=1060"
+                src="assets/imgs/heroPage4.jpg"
                 alt=""
                 class="w-full h-full object-cover" />
             </div>
             <div
-              class="max-w-28 max-h-28 aspect-squre rounded-xl overflow-hidden">
+              class="max-w-28 max-h-28 aspect-squre rounded-xl overflow-hidden"
+              style="
+                filter: drop-shadow(0px 30px 60px rgba(59, 130, 246, 0.25));
+              ">
               <img
-                src="https://img.freepik.com/free-photo/corporate-business-handshake-partners_53876-101939.jpg?t=st=1721986813~exp=1721990413~hmac=81fb4a302bf12edb1d70c1f05d7715872b07d1e7d691b552f1d4fce7c47daf9f&w=900"
+                src="assets/imgs/heroPage3.jpg"
                 alt=""
                 class="w-full h-full object-cover" />
             </div>
           </div>
           <div class="flex flex-row justify-around gap-5 items-center">
             <div
-              class="max-w-80 max-h-64 aspect-squre rounded-xl overflow-hidden">
+              class="max-w-80 max-h-64 aspect-squre rounded-xl overflow-hidden"
+              style="
+                filter: drop-shadow(0px 30px 60px rgba(59, 130, 246, 0.25));
+              ">
               <img
-                src="https://img.freepik.com/free-photo/modern-equipped-computer-lab_23-2149241213.jpg?t=st=1721986147~exp=1721989747~hmac=ff754d9cc9213004846cc8e50f69a1306faa3c1c0111eb08ca1b7fc341f7804a&w=1060"
+                src="assets/imgs/heroPage2.jpg"
                 alt=""
                 class="w-full h-full object-cover" />
             </div>
 
             <div
-              class="max-w-52 max-h-52 aspect-squre rounded-xl overflow-hidden">
+              class="max-w-52 max-h-52 aspect-squre rounded-xl overflow-hidden"
+              style="
+                filter: drop-shadow(0px 30px 60px rgba(59, 130, 246, 0.25));
+              ">
               <img
-                src="https://img.freepik.com/free-photo/people-working-elegant-cozy-office-space_23-2149548715.jpg?t=st=1721986560~exp=1721990160~hmac=80b17ea155a3594d592984f8fc62b5477a461be597873d357584dc0531e938e2&w=996"
+                src="assets/imgs/heroPage1.jpg"
                 alt=""
                 class="w-full h-full object-cover" />
             </div>
@@ -106,9 +155,10 @@
       </div>
     </section>
     <!-- services section  -->
+     <div id="services" class="h-[10dvh]"></div>
     <section
-      id="services"
-      class="flex flex-col gap-5 md:gap-10 justify-start items-center h-fit md:h-[90dvh] w-screen bg-left-top bg-no-repeat bg-contain"
+      
+      class="flex flex-col  gap-5 md:gap-10 justify-start items-center h-fit md:h-[90dvh] w-screen bg-left-top bg-no-repeat bg-contain"
       style="background-image: url(assets/bgimg/services-BG.png)">
       <h2
         class="text-[#193766] dm-sans font-bold text-[40px] md:text-[60px] mt-5">
@@ -120,12 +170,12 @@
           <div
             class="mainDiv rounded-sm hover:detailText-top-0 ease-in-out duration-300 max-w-[400px] min-h-[220px] h-full w-full aspect-video relative bg-center bg-no-repeat bg-cover overflow-hidden"
             style="
-              background-image: url(https://img.freepik.com/free-photo/business-growth_53876-119982.jpg?t=st=1721984750~exp=1721988350~hmac=41ec47fb9a0155433eb1e206303c32ee46b207b4a181c3c53a7b6cdec8ac0ffc&w=826);
-              filter: drop-shadow(0px 5px 45px rgba(25, 55, 102, 0.5));
+              background-image: url(assets/imgs/ourService1.jpg);
+              filter: drop-shadow(0px 30px 60px rgba(59, 130, 246, 0.25));
             ">
             <div
               id="detailText"
-              class="detailText bg-[#193766] h-full bg-opacity-85 text-white p-4 leading-6 md:leading-9 text-justify absolute top-[-550px] ease-in-out duration-500">
+              class="detailText bg-[#193766] h-full bg-opacity-85 text-white p-4 leading-6 md:leading-6 text-justify absolute top-[-550px] ease-in-out duration-500">
               Welcome to our Consulting services, specializing in Tendering
               solutions. We offer expert guidance and support throughout the
               tendering process, ensuring your bids are competitive and
@@ -146,12 +196,12 @@
           <div
             class="mainDiv rounded-sm ease-in-out duration-300 max-w-[400px] min-h-[220px] h-full w-full aspect-video relative bg-center bg-no-repeat bg-cover overflow-hidden hover:.detailText"
             style="
-              background-image: url(https://img.freepik.com/free-photo/people-with-laptops-office_23-2147656717.jpg?t=st=1721985084~exp=1721988684~hmac=28a9907562f4e88afc1673ba740425e0245481cc5fb630f6ba221766fa617eb4&w=996);
-              filter: drop-shadow(0px 5px 45px rgba(25, 55, 102, 0.5));
+              background-image: url(assets/imgs/ourService2.jpg);
+              filter: drop-shadow(0px 30px 60px rgba(59, 130, 246, 0.25));
             ">
             <div
               id="detailText"
-              class="detailText bg-[#193766] h-full bg-opacity-85 text-white p-4 leading-6 md:leading-9 text-justify absolute top-[-550px] ease-in-out duration-500">
+              class="detailText bg-[#193766] h-full bg-opacity-85 text-white p-4 leading-6 md:leading-6 text-justify absolute top-[-550px] ease-in-out duration-500">
               Discover our Repairing service, specializing in both indoor and
               outdoor lighting solutions. We're committed to restoring
               functionality and efficiency to your lighting systems, ensuring
@@ -175,12 +225,12 @@
           <div
             class="mainDiv rounded-sm ease-in-out duration-300 max-w-[400px] min-h-[220px] h-full w-full aspect-video relative bg-center bg-no-repeat bg-cover overflow-hidden hover:.detailText"
             style="
-              background-image: url(https://img.freepik.com/free-photo/close-up-executive-holding-economic-report_1098-3057.jpg?t=st=1721985059~exp=1721988659~hmac=eee50a8f6c98b4542393c2d873f3e869ab0269a246d69e7a3e856a96d3930f18&w=996);
-              filter: drop-shadow(0px 5px 45px rgba(25, 55, 102, 0.5));
+              background-image: url(assets/imgs/ourService3.jpg);
+              filter: drop-shadow(0px 30px 60px rgba(59, 130, 246, 0.25));
             ">
             <div
               id="detailText"
-              class="detailText bg-[#193766] h-full bg-opacity-85 text-white p-4 leading-6 md:leading-9 text-justify absolute top-[-550px] ease-in-out duration-500">
+              class="detailText bg-[#193766] h-full bg-opacity-85 text-white p-4 leading-6 md:leading-6 text-justify absolute top-[-550px] ease-in-out duration-500">
               We specialize in providing a diverse range of essential equipment
               to meet your business needs. From indoor and outdoor lighting to
               fire-fighting equipment, retail outlet accessories, and innovative
@@ -201,12 +251,12 @@
           <div
             class="mainDiv rounded-sm ease-in-out duration-300 max-w-[400px] min-h-[220px] h-full w-full aspect-video relative bg-center bg-no-repeat bg-cover overflow-hidden hover:.detailText"
             style="
-              background-image: url(https://img.freepik.com/free-photo/3d-character-emerging-from-smartphone_23-2151336688.jpg?t=st=1721985014~exp=1721988614~hmac=9fe635986bb79d755cc78dfa388ab5f748e1bad912828ce61c80f1ae0a9a92d3&w=360);
-              filter: drop-shadow(0px 5px 45px rgba(25, 55, 102, 0.5));
+              background-image: url(assets/imgs/ourService4.jpg);
+              filter: drop-shadow(0px 30px 60px rgba(59, 130, 246, 0.25));
             ">
             <div
               id="detailText"
-              class="detailText bg-[#193766] h-full bg-opacity-85 text-white p-4 leading-6 md:leading-9 text-justify absolute top-[-550px] ease-in-out duration-500">
+              class="detailText bg-[#193766] h-full bg-opacity-85 text-white p-4 leading-6 md:leading-6 text-justify absolute top-[-550px] ease-in-out duration-500">
               Welcome to our Human Resources Providing service, catering to
               diverse projects such as SBM and State TPI initiatives. We offer
               customized HR solutions to meet each project's unique
@@ -258,7 +308,9 @@
           <a href="#contact">
             <button
               class="bg-[#3B82F6] rounded-md py-2 md:py-4 text-white px-3 md:px-5 font-bold dm-sans"
-              style="filter: drop-shadow(0px 18px 45px rgba(25, 55, 102, 0.7))">
+              style="
+                filter: drop-shadow(0px 30px 60px rgba(59, 130, 246, 0.25));
+              ">
               Contact Now
             </button>
           </a>
@@ -268,25 +320,31 @@
           <div class="flex flex-row items-end justify-center gap-5">
             <div
               class="w-28 h-28 lg:w-38 lg:h-38 aspect-squre rounded-md overflow-hidden object-cover"
-              style="filter: drop-shadow(0px 5px 45px rgba(25, 55, 102, 0.7))">
+              style="
+                filter: drop-shadow(0px 30px 60px rgba(59, 130, 246, 0.25));
+              ">
               <img
-                src="https://img.freepik.com/free-photo/3d-character-emerging-from-smartphone_23-2151336688.jpg?t=st=1721985014~exp=1721988614~hmac=9fe635986bb79d755cc78dfa388ab5f748e1bad912828ce61c80f1ae0a9a92d3&w=360"
+                src="assets/imgs/about1.jpg"
                 alt=""
                 class="w-full h-full object-cover" />
             </div>
             <div
               class="w-52 aspect-squre rounded-md overflow-hidden object-cover"
-              style="filter: drop-shadow(0px 5px 45px rgba(25, 55, 102, 0.7))">
+              style="
+                filter: drop-shadow(0px 30px 60px rgba(59, 130, 246, 0.25));
+              ">
               <img
-                src="https://img.freepik.com/free-photo/business-growth_53876-119982.jpg?t=st=1721984750~exp=1721988350~hmac=41ec47fb9a0155433eb1e206303c32ee46b207b4a181c3c53a7b6cdec8ac0ffc&w=826"
+                src="assets/imgs/about2.jpg"
                 alt=""
                 class="w-full h-full object-cover" />
             </div>
             <div
               class="w-36 hidden md:block aspect-squre rounded-md overflow-hidden object-cover"
-              style="filter: drop-shadow(0px 5px 45px rgba(25, 55, 102, 0.7))">
+              style="
+                filter: drop-shadow(0px 30px 60px rgba(59, 130, 246, 0.25));
+              ">
               <img
-                src="https://img.freepik.com/free-photo/close-up-executive-holding-economic-report_1098-3057.jpg?t=st=1721985059~exp=1721988659~hmac=eee50a8f6c98b4542393c2d873f3e869ab0269a246d69e7a3e856a96d3930f18&w=996"
+                src="assets/imgs/about3.jpg"
                 alt=""
                 class="w-full h-full object-cover" />
             </div>
@@ -294,9 +352,11 @@
           <div class="flex justify-center items-center w-full">
             <div
               class="w-72 lg:w-96 aspect-squre rounded-md overflow-hidden object-cover"
-              style="filter: drop-shadow(0px 18px 45px rgba(25, 55, 102, 0.7))">
+              style="
+                filter: drop-shadow(0px 30px 60px rgba(59, 130, 246, 0.25));
+              ">
               <img
-                src="https://img.freepik.com/free-photo/people-with-laptops-office_23-2147656717.jpg?t=st=1721985084~exp=1721988684~hmac=28a9907562f4e88afc1673ba740425e0245481cc5fb630f6ba221766fa617eb4&w=996"
+                src="assets/imgs/about4.png"
                 alt=""
                 class="w-full h-full object-cover" />
             </div>
@@ -313,13 +373,21 @@
         class="w-[85%] flex flex-col-reverse lg:flex-row justify-evenly items-center gap-10 h-full">
         <div class="flex flex-row justify-center items-center gap-5 w-full">
           <div class="flex flex-col justify-center items-end gap-5">
-            <div class="w-32 md:w-52 h-32 md:h-52  max-w-80 max-h-80 overflow-hidden rounded-md">
+            <div
+              class="w-32 md:w-52 h-32 md:h-52 max-w-80 max-h-80 overflow-hidden rounded-md"
+              style="
+                filter: drop-shadow(0px 30px 60px rgba(59, 130, 246, 0.25));
+              ">
               <img
                 src="assets/imgs/heroPage4.jpg"
                 alt=""
                 class="object-cover h-full w-full" />
             </div>
-            <div class="h-52 md:h-80 w-32 md:w-48 overflow-hidden rounded-md">
+            <div
+              class="h-52 md:h-80 w-32 md:w-48 overflow-hidden rounded-md"
+              style="
+                filter: drop-shadow(0px 30px 60px rgba(59, 130, 246, 0.25));
+              ">
               <img
                 src="assets/imgs/about2.jpg"
                 alt=""
@@ -327,13 +395,21 @@
             </div>
           </div>
           <div class="flex flex-col gap-5">
-            <div class="w-32 md:w-52 h-64 md:h-80 overflow-hidden rounded-md">
+            <div
+              class="w-32 md:w-52 h-64 md:h-80 overflow-hidden rounded-md"
+              style="
+                filter: drop-shadow(0px 30px 60px rgba(59, 130, 246, 0.25));
+              ">
               <img
                 src="assets/imgs/heroPage1.jpg"
                 alt=""
                 class="object-cover h-full w-full" />
             </div>
-            <div class=" w-32 md:w-64 h-32 md:h-52 max-w-80 max-h-80 overflow-hidden rounded-md">
+            <div
+              class="w-32 md:w-64 h-32 md:h-52 max-w-80 max-h-80 overflow-hidden rounded-md"
+              style="
+                filter: drop-shadow(0px 30px 60px rgba(59, 130, 246, 0.25));
+              ">
               <img
                 src="assets/imgs/heroPage2.jpg"
                 alt=""
@@ -392,8 +468,9 @@
       </div>
     </section>
     <!-- contactus section  -->
+    <div  id="contact" class="h-[10dvh]"></div>
     <section
-      id="contact"
+     
       class="flex flex-col justify-center items-center h-fit lg:h-[90dvh] w-screen">
       <div
         style="background-image: url(assets/bgimg/contct-BG.png)"
@@ -447,7 +524,7 @@
                 type="submit"
                 class="bg-[#3B82F6] w-full rounded-md py-3 font-bold dm-sans text-white"
                 style="
-                  filter: drop-shadow(0px 18px 45px rgba(25, 55, 102, 0.7));
+                  filter: drop-shadow(0px 30px 60px rgba(59, 130, 246, 0.25));
                 ">
                 Submit
               </button>
@@ -466,12 +543,14 @@
       </h2>
       <div class="flex w-[85%] flex-col lg:flex-row gap-10 mt-20">
         <div
+          style="filter: drop-shadow(0px 30px 60px rgba(59, 130, 246, 0.25))"
           class="flex flex-col bg-[#3B82F6] bg-opacity-25 rounded-xl relative justify-evenly p-4 h-full gap-2 lg:gap-5">
           <div
-            class="h-20 w-20 rounded-full overflow-hidden absolute top-[-40px] right-5">
+            class="h-20 w-20 rounded-full overflow-hidden absolute top-[-40px] right-5"
+            style="filter: drop-shadow(0px 30px 60px rgba(59, 130, 246, 0.25))">
             <img
               class="w-full h-full object-cover"
-              src="https://img.freepik.com/free-photo/young-bearded-man-with-striped-shirt_273609-5677.jpg?t=st=1722001254~exp=1722004854~hmac=b61899af3f221524ebab005a53e12535d84fcc229e10a3368ce13f1cab1fab55&w=996"
+              src="assets/imgs/user1.jpg"
               alt="" />
           </div>
           <div class="flex flex-row">
@@ -488,15 +567,17 @@
             recommend them to anyone looking for top-notch sales and solutions
             services.
           </p>
-          <span class=" font-bold">~ Rohit Sharma </span>
+          <span class="font-bold">~ Rohit Sharma </span>
         </div>
         <div
+          style="filter: drop-shadow(0px 30px 60px rgba(59, 130, 246, 0.25))"
           class="flex flex-col bg-[#D6F4FD] bg-opacity-1 rounded-xl relative justify-evenly p-4 h-full gap-2 lg:gap-5">
           <div
-            class="h-20 w-20 rounded-full overflow-hidden absolute top-[-40px] lg:top-none bottom-none lg:bottom-[-30px] right-5">
+            class="h-20 w-20 rounded-full overflow-hidden absolute top-[-40px] lg:top-none bottom-none lg:bottom-[-30px] right-5"
+            style="filter: drop-shadow(0px 30px 60px rgba(59, 130, 246, 0.25))">
             <img
               class="w-full h-full object-cover"
-              src="https://img.freepik.com/free-photo/cheerful-indian-businessman-smiling-closeup-portrait-jobs-career-campaign_53876-129417.jpg?t=st=1721995023~exp=1721998623~hmac=e73fcaae7ff699cccf2ca4d04f1e5faba5f03d1548bcfb7935267d19a595e60b&w=996"
+              src="assets/imgs/user2.jpg"
               alt="" />
           </div>
           <div class="flex flex-row">
@@ -513,15 +594,17 @@
             our expectations. We are extremely satisfied and will be returning
             for future projects.
           </p>
-          <span class=" font-bold">~ Karan Patel</span>
+          <span class="font-bold">~ Karan Patel</span>
         </div>
         <div
+          style="filter: drop-shadow(0px 30px 60px rgba(59, 130, 246, 0.25))"
           class="flex flex-col bg-[#DE98FF] bg-opacity-25 rounded-xl relative justify-evenly p-4 h-full gap-2 lg:gap-5">
           <div
-            class="h-20 w-20 rounded-full overflow-hidden absolute top-[-40px] right-5">
+            class="h-20 w-20 rounded-full overflow-hidden absolute top-[-40px] right-5"
+            style="filter: drop-shadow(0px 30px 60px rgba(59, 130, 246, 0.25))">
             <img
               class="w-full h-full object-cover"
-              src="https://img.freepik.com/free-photo/young-beautiful-woman-pink-warm-sweater-natural-look-smiling-portrait-isolated-long-hair_285396-896.jpg?t=st=1722001651~exp=1722005251~hmac=91da891ea394a48bfd29626f60b6fe8333e2e54c70338975afa019904250defc&w=996"
+              src="assets/imgs/user3.jpg"
               alt="" />
           </div>
           <div class="flex flex-row">
@@ -538,15 +621,16 @@
             overall quality of their work was impressive. I would definitely
             work with them again.
           </p>
-          <span class=" font-bold">~ Anjali Mehta</span>
+          <span class="font-bold">~ Anjali Mehta</span>
         </div>
       </div>
       <div
-        class="hidden  justify-around itmes-center w-[55%] flex-col lg:flex-row gap-10 mt-20">
+        class="hidden justify-around itmes-center w-[55%] flex-col lg:flex-row gap-10 mt-20">
         <div
           class="flex flex-col bg-[#DE98FF] bg-opacity-25 rounded-xl relative justify-evenly p-4 h-full gap-2 lg:gap-5">
           <div
-            class="h-20 w-20 rounded-full overflow-hidden absolute top-[-40px] right-5">
+            class="h-20 w-20 rounded-full overflow-hidden absolute top-[-40px] right-5"
+            style="filter: drop-shadow(0px 30px 60px rgba(59, 130, 246, 0.25))">
             <img
               class="w-full h-full object-cover"
               src="https://img.freepik.com/free-photo/close-up-portrait-young-bearded-man-white-shirt-jacket-posing-camera-with-broad-smile-isolated-gray_171337-629.jpg?t=st=1722001494~exp=1722005094~hmac=15c93de776bd3c9de9dee71486f2afd76f26d1a17233f9d6a41a150a9d67fe49&w=996"
@@ -566,12 +650,13 @@
             we faced a slight miscommunication initially. However, they resolved
             it quickly, and the final outcome was fantastic.
           </p>
-          <span class=" font-bold">~ Aman Verma</span>
+          <span class="font-bold">~ Aman Verma</span>
         </div>
         <div
           class="flex flex-col bg-[#3B82F6] bg-opacity-25 rounded-xl relative justify-evenly p-4 h-full gap-2 lg:gap-5">
           <div
-            class="h-20 w-20 rounded-full overflow-hidden absolute bottom-[-30px] right-5">
+            class="h-20 w-20 rounded-full overflow-hidden absolute bottom-[-30px] right-5"
+            style="filter: drop-shadow(0px 30px 60px rgba(59, 130, 246, 0.25))">
             <img
               class="w-full h-full object-cover"
               src="https://img.freepik.com/free-photo/closeup-happy-joyful-guy-eyeglasses_74855-2697.jpg?t=st=1722001766~exp=1722005366~hmac=11c5bcf07c1de69345aa20dee54a1b16565500ccea148f5c2147b6a0fba74f4f&w=996"
@@ -590,7 +675,7 @@
             entire process seamless and stress-free. I highly recommend their
             services to anyone seeking reliable and efficient sales solutions.
           </p>
-          <span class=" font-bold">~ Pankaj Dubey</span>
+          <span class="font-bold">~ Pankaj Dubey</span>
         </div>
       </div>
     </section>

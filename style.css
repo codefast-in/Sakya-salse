@@ -29,3 +29,12 @@
 .mainDiv:hover .iconText {
     bottom: -100px;
 }
+
+.show{
+position: fixed;
+top:0;
+}
+.hide{
+    position: absolute;
+    top:-500px;
+}

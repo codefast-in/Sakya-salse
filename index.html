@@ -22,7 +22,7 @@
     }
   </script>
   <body
-  style="scroll-behavior: smooth;scroll-snap-type: mandatory;"
+    style="scroll-behavior: smooth; scroll-snap-type: mandatory"
     class="h-full bg-gradient-to-b from-[#E4EFFF] to-[#fff] overflow-x-hidden ease-in-out duration-500">
     <!-- navbar section -->
     <section
@@ -45,7 +45,7 @@
     <!-- toggle bar  -->
     <section
       id="navBar"
-      class="w-screen hide z-40 h-fit bg-[#193766] mt-[12dvh]  md:hidden flex justify-center items-center ease-in-out duration-500">
+      class="w-screen hide z-40 h-fit bg-[#193766] mt-[12dvh] md:hidden flex justify-center items-center ease-in-out duration-500">
       <div class="flex flex-row justify-start gap-32 items-center py-5 w-[85%]">
         <ul
           class="flex flex-col h-full justify-start text-white gap-10 w-[40%] font-bold dm-sans">
@@ -62,15 +62,15 @@
         </ul>
       </div>
     </section>
+    <div id="home" class="h-[15dvh]"></div>
     <!-- landing section -->
     <section
-      id="home"
-      class="flex flex-col  justify-start items-center h-fit md:h-[80dvh] mt-[15dvh] w-screen bg-right-bottom md:bg-right-top bg-no-repeat bg-contain"
+      class="flex flex-col justify-start items-center h-fit md:h-[80dvh] w-screen bg-right-bottom md:bg-right-top bg-no-repeat bg-contain"
       style="background-image: url(assets/bgimg/hero-BG1.png)">
       <div
         class="flex flex-col sm:flex-row justify-between items-start gap-10 h-full mt-5 md:mt-10 w-[85%]">
         <div
-          class="flex   flex-col justify-start gap-5 md:gap-10 items-start h-full w-full md:w-[60%]">
+          class="flex flex-col justify-start gap-5 md:gap-10 items-start h-full w-full md:w-[60%]">
           <div class="dm-serif text-4xl md:text-5xl text-[#193766]">
             Top-quality <br /><span class="underline text-[#3B82F6]"
               >Products</span
@@ -155,10 +155,9 @@
       </div>
     </section>
     <!-- services section  -->
-     <div id="services" class="h-[10dvh]"></div>
+    <div id="services" class="h-[10dvh]"></div>
     <section
-      
-      class="flex flex-col  gap-5 md:gap-10 justify-start items-center h-fit md:h-[90dvh] w-screen bg-left-top bg-no-repeat bg-contain"
+      class="flex flex-col gap-5 md:gap-10 justify-start items-center h-fit md:h-[90dvh] w-screen bg-left-top bg-no-repeat bg-contain"
       style="background-image: url(assets/bgimg/services-BG.png)">
       <h2
         class="text-[#193766] dm-sans font-bold text-[40px] md:text-[60px] mt-5">
@@ -468,9 +467,8 @@
       </div>
     </section>
     <!-- contactus section  -->
-    <div  id="contact" class="h-[10dvh]"></div>
+    <div id="contact" class="h-[10dvh]"></div>
     <section
-     
       class="flex flex-col justify-center items-center h-fit lg:h-[90dvh] w-screen">
       <div
         style="background-image: url(assets/bgimg/contct-BG.png)"
@@ -491,34 +489,41 @@
               <div class="flex flex-row w-full gap-5">
                 <input
                   type="text"
-                  name=""
-                  id=""
+                  name="name"
+                  id="name"
                   class="w-full rounded-md py-3 font-bold dm-sans"
-                  placeholder="Name" />
+                  placeholder="Name"
+                  required />
                 <input
                   type="tel"
-                  name=""
-                  id=""
+                  name="cContact"
+                  id="cContact"
                   class="w-full rounded-md py-3 font-bold dm-sans"
-                  placeholder="Mobile no." />
+                  placeholder="Mobile no."
+                  minlength="10"
+                  maxlength="10"
+                  required />
               </div>
               <input
                 type="email"
-                name=""
-                id=""
+                name="email"
+                id="email"
                 class="w-full rounded-md py-3 font-bold dm-sans"
-                placeholder="Email" />
+                placeholder="Email"
+                required />
               <input
                 type="text"
-                name=""
-                id=""
+                name="companyName"
+                id="companyName"
                 class="w-full rounded-md py-3 font-bold dm-sans"
-                placeholder="Company name" />
+                placeholder="Company name"
+                required />
               <textarea
                 rows="5"
-                name=""
-                id=""
-                placeholder="Massege"
+                name="message"
+                id="message"
+                placeholder="Message"
+                required
                 class="w-full rounded-md py-3 font-bold dm-sans"></textarea>
               <button
                 type="submit"
@@ -722,5 +727,16 @@
         </div>
       </div>
     </section>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init({
+          publicKey: "AdqhwMg3c4TG-1sFZ",
+        });
+      })();
+    </script>
+    <script src="main.js"></script>
   </body>
 </html>

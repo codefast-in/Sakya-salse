@@ -3,52 +3,44 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp,container-queries"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon" />
+    <link rel="stylesheet" href="/main.css" />
     <script
       src="https://kit.fontawesome.com/55ce5c7b53.js"
       crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="shortcut icon" href="logo.png" type="image/x-icon" />
     <title>Sakya</title>
+    <script>
+      function toggle() {
+        let nav = document.getElementById("navBar");
+        // console.log(nav)
+        nav.classList.toggle("hide");
+        nav.classList.toggle("show");
+      }
+    </script>
   </head>
-  <script>
-    function toggle() {
-      let nav = document.getElementById("navBar");
-      // console.log(nav)
-      nav.classList.toggle("hide");
-      nav.classList.toggle("show");
-    }
-  </script>
-  <body
-    style="scroll-behavior: smooth; scroll-snap-type: mandatory"
-    class="h-full bg-gradient-to-b from-[#E4EFFF] to-[#fff] overflow-x-hidden ease-in-out duration-500">
+  <body class="bodyClass">
     <!-- navbar section -->
-    <section
-      class="w-screen fixed top-0 z-50 bg-gradient-to-b from-[#FFF] to-[#E4Efff] flex justify-center items-center">
-      <div
-        class="flex flex-row justify-between md:justify-start gap-32 items-center w-[85%]">
-        <div class="w-36 md:w-48"><img src="logo.png" alt="Sakya LOGO" /></div>
-        <ul
-          class="hidden md:flex flex-row justify-between text-[#193766] w-[40%] font-bold dm-sans">
+    <nav class="navBar">
+      <div class="navDiv">
+        <div class="logo">
+          <img src="logo.png" alt="Sakya LOGO" class="logoImg" />
+        </div>
+        <ul class="navLinks dm-sans">
           <li><a href="#home" target="_self">Home</a></li>
           <li><a href="#services" target="_self">Services</a></li>
           <li><a href="#about" target="_self">About Us</a></li>
           <li><a href="#contact" target="_self">Contact Us</a></li>
         </ul>
-        <div class="block md:hidden" onclick="toggle()">
-          <i class="fa-solid fa-bars-staggered text-2xl text-[#193766]"></i>
+        <div class="toggleBtn" onclick="toggle()">
+          <i class="fa-solid fa-bars-staggered toggleIcon"></i>
         </div>
       </div>
-    </section>
+    </nav>
+
     <!-- toggle bar  -->
-    <section
-      id="navBar"
-      class="w-screen hide z-40 h-fit bg-[#193766] mt-[12dvh] md:hidden flex justify-center items-center ease-in-out duration-500">
-      <div class="flex flex-row justify-start gap-32 items-center py-5 w-[85%]">
-        <ul
-          class="flex flex-col h-full justify-start text-white gap-10 w-[40%] font-bold dm-sans">
+    <section id="navBar" class="hide toggleDiv">
+      <div class="toogleMenu">
+        <ul class="toogleLinks dm-sans">
           <li onclick="toggle()"><a href="#home" target="_self">Home</a></li>
           <li onclick="toggle()">
             <a href="#services" target="_self">Services</a>
@@ -62,219 +54,238 @@
         </ul>
       </div>
     </section>
-    <div id="home" class="h-[15dvh]"></div>
+
     <!-- landing section -->
-    <section
-      class="flex flex-col justify-start items-center h-fit md:h-[80dvh] w-screen bg-right-bottom md:bg-right-top bg-no-repeat bg-contain"
-      style="
-        background-image: url('https://ik.imagekit.io/kipkr4n2w/Sakya_assets/bgimg/hero-BG1.png?updatedAt=1724396839352');
-      ">
-      <div
-        class="flex flex-col sm:flex-row justify-between items-start gap-10 h-full mt-5 md:mt-10 w-[85%]">
-        <div
-          class="flex flex-col justify-start gap-5 md:gap-10 items-start h-full w-full md:w-[60%]">
-          <div class="dm-serif text-4xl md:text-5xl text-[#193766]">
-            Top-quality <br /><span class="underline text-[#3B82F6]"
+    <div id="home" style="height: 15dvh"></div>
+    <section class="landingSection">
+      <div class="landingMainDiv">
+        <div class="landingContentDiv">
+          <div
+            class="dm-serif"
+            style="font-size: 2.25rem; /* 4xl */ color: #193766">
+            Top-quality <br /><span
+              style="text-decoration: underline; color: #3b82f6"
               >Products</span
             >
             and <br />
-            stellar <span class="underline text-[#3B82F6]">Services</span> are
-            <br />just a call away.
+            stellar
+            <span style="text-decoration: underline; color: #3b82f6"
+              >Services</span
+            >
+            are <br />just a call away.
           </div>
           <div
-            class="text-[#697B98] text-[12px] md:text-[18px] font-semibold dm-sans w-full">
+            class="dm-sans disText"
+            style="
+              color: #697b98;
+              font-size: 12px;
+              font-weight: 600; /* font-semibold */
+              width: 100%;
+            ">
             Discover unbeatable prices and unparalleled <br />customer support
             at Skaya. Your one-stop solution <br />
             for all your needs
           </div>
-          <a href="#contact">
-            <button
-              class="bg-[#3B82F6] rounded-md py-2 md:py-4 text-white px-3 md:px-5 font-bold dm-sans"
-              style="
-                filter: drop-shadow(0px 30px 60px rgba(59, 130, 246, 0.25));
-              ">
-              Contact Now
-            </button></a
+          <a href="#contact" class="filterShadow">
+            <button class="conBtn dm-sans">Contact Now</button></a
           >
         </div>
-        <div class="h-[90%]">
-          <img src="https://ik.imagekit.io/kipkr4n2w/Sakya_assets/imgs/hero_home_page.png?updatedAt=1725011383200" class="h-full" alt="" />
+        <div style="height: 90%">
+          <img
+            src="https://ik.imagekit.io/kipkr4n2w/Sakya_assets/imgs/hero_home_page.png?updatedAt=1725011383200"
+            style="height: 100%; width: 100%; object-fit: contain"
+            alt="" />
         </div>
-        <!-- <div class="flex flex-col gap-5 h-full">
-          <div class="flex gap-5 justify-between items-end">
-            <div
-              class="max-w-48 max-h-28 aspect-squre rounded-xl overflow-hidden"
-              style="
-                filter: drop-shadow(0px 30px 60px rgba(59, 130, 246, 0.25));
-              ">
-              <img
-                src="https://ik.imagekit.io/kipkr4n2w/Sakya_assets/imgs/heroPage5.jpg?updatedAt=1724396541964"
-                alt=""
-                class="h-full w-full object-cover" />
-            </div>
-            <div
-              class="max-w-64 max-h-48 aspect-squre rounded-xl overflow-hidden"
-              style="
-                filter: drop-shadow(0px 30px 60px rgba(59, 130, 246, 0.25));
-              ">
-              <img
-                src="https://ik.imagekit.io/kipkr4n2w/Sakya_assets/imgs/heroPage4.jpg?updatedAt=1724396541841"
-                alt=""
-                class="w-full h-full object-cover" />
-            </div>
-            <div
-              class="max-w-28 max-h-28 aspect-squre rounded-xl overflow-hidden"
-              style="
-                filter: drop-shadow(0px 30px 60px rgba(59, 130, 246, 0.25));
-              ">
-              <img
-                src="https://ik.imagekit.io/kipkr4n2w/Sakya_assets/imgs/heroPage3.jpg?updatedAt=1724396537001"
-                alt=""
-                class="w-full h-full object-cover" />
-            </div>
-          </div>
-          <div class="flex flex-row justify-around gap-5 items-center">
-            <div
-              class="max-w-80 max-h-64 aspect-squre rounded-xl overflow-hidden"
-              style="
-                filter: drop-shadow(0px 30px 60px rgba(59, 130, 246, 0.25));
-              ">
-              <img
-                src="https://ik.imagekit.io/kipkr4n2w/Sakya_assets/imgs/heroPage2.jpg?updatedAt=1724396544317"
-                alt=""
-                class="w-full h-full object-cover" />
-            </div>
-
-            <div
-              class="max-w-52 max-h-52 aspect-squre rounded-xl overflow-hidden"
-              style="
-                filter: drop-shadow(0px 30px 60px rgba(59, 130, 246, 0.25));
-              ">
-              <img
-                src="https://ik.imagekit.io/kipkr4n2w/Sakya_assets/imgs/heroPage1.jpg?updatedAt=1724396545809"
-                alt=""
-                class="w-full h-full object-cover" />
-            </div>
-          </div>
-        </div> -->
       </div>
     </section>
+
     <!-- services section  -->
-    <div id="services" class="h-[10dvh]"></div>
-    <section
-      class="flex flex-col gap-5 md:gap-10 justify-start items-center h-fit md:h-[90dvh] w-screen bg-left-top bg-no-repeat bg-contain"
-      style="
-        background-image: url('https://ik.imagekit.io/kipkr4n2w/Sakya_assets/bgimg/services-BG.png?updatedAt=1724396839376');
-      ">
-      <h2
-        class="text-[#193766] dm-sans font-bold text-[40px] md:text-[60px] mt-5">
-        Our Services
-      </h2>
-      <div class="w-[85%] h-full flex flex-col gap-8">
-        <div
-          class="flex flex-col md:flex-row justify-evenly items-center gap-5">
+    <div id="services" style="height: 10dvh"></div>
+    <section class="servicesSection">
+      <h2 class="dm-sans servicesHeading">Our Services</h2>
+      <div class="servicesMainDiv">
+        <div class="servicesRow">
           <div
-            class="mainDiv rounded-sm hover:detailText-top-0 ease-in-out duration-300 max-w-[400px] min-h-[220px] h-full w-full aspect-video relative bg-center bg-no-repeat bg-cover overflow-hidden"
+            class="mainDiv filterShadow"
             style="
               background-image: url('https://ik.imagekit.io/kipkr4n2w/Sakya_assets/imgs/ourService1.jpg?updatedAt=1724396538123');
-              filter: drop-shadow(0px 30px 60px rgba(59, 130, 246, 0.25));
             ">
-            <div
-              id="detailText"
-              class="detailText bg-[#193766] h-full bg-opacity-85 text-white p-4 leading-6 md:leading-6 text-justify absolute top-[-550px] ease-in-out duration-500">
+            <div id="detailText" class="detailText">
               Welcome to our Consulting services, specializing in Tendering
               solutions. We offer expert guidance and support throughout the
               tendering process, ensuring your bids are competitive and
               compliant. Partner with us to maximize your chances of success in
               securing lucrative contracts.
             </div>
-            <div
-              class="flex flex-row w-full justify-start items-strach absolute bottom-0 iconText ease-in-out duration-500">
-              <div class="bg-[#193766] h-full py-4 px-5 text-xl">
-                <i class="fa-brands fa-confluence text-white h-full"></i>
+            <div class="serviceTitleDiv">
+              <div
+                style="
+                  background-color: #193766;
+                  padding-top: 1rem;
+                  padding-bottom: 1rem;
+                  padding-left: 1.25rem;
+                  padding-right: 1.25rem;
+                  font-size: 1.25rem;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                ">
+                <i
+                  class="fa-brands fa-confluence"
+                  style="color: white; font-size: larger"></i>
               </div>
               <div
-                class="bg-[#3B82F6] bg-opacity-90 h-full py-4 px-5 w-full text-start text-xl text-white dm-serif text-[38px]">
+                class="dm-serif"
+                style="
+                  background-color: rgba(59, 130, 246, 0.9);
+                  padding-top: 1rem;
+                  padding-bottom: 1rem;
+                  padding-left: 1.25rem;
+                  padding-right: 1.25rem;
+                  width: 100%;
+                  text-align: start;
+                  font-size: 20px;
+                  color: #ffffff;
+                ">
                 Consulting
               </div>
             </div>
           </div>
           <div
-            class="mainDiv rounded-sm ease-in-out duration-300 max-w-[400px] min-h-[220px] h-full w-full aspect-video relative bg-center bg-no-repeat bg-cover overflow-hidden hover:.detailText"
+            class="mainDiv filterShadow"
             style="
               background-image: url('https://ik.imagekit.io/kipkr4n2w/Sakya_assets/imgs/ourService2.jpg?updatedAt=1724399150392');
-              filter: drop-shadow(0px 30px 60px rgba(59, 130, 246, 0.25));
             ">
-            <div
-              id="detailText"
-              class="detailText bg-[#193766] h-full bg-opacity-85 text-white p-4 leading-6 md:leading-6 text-justify absolute top-[-550px] ease-in-out duration-500">
+            <div id="detailText" class="detailText">
               Discover our Repairing service, specializing in both indoor and
               outdoor lighting solutions. We're committed to restoring
               functionality and efficiency to your lighting systems, ensuring
               optimal illumination for your spaces. Trust us to keep your
               lighting infrastructure shining bright.
             </div>
-            <div
-              class="flex flex-row w-full justify-start items-strach absolute bottom-0 iconText ease-in-out duration-500">
-              <div class="bg-[#193766] h-full py-4 px-5 text-xl">
-                <i class="fa-brands fa-confluence text-white h-full"></i>
+            <div class="serviceTitleDiv">
+              <div
+                style="
+                  background-color: #193766;
+                  padding-top: 1rem;
+                  padding-bottom: 1rem;
+                  padding-left: 1.25rem;
+                  padding-right: 1.25rem;
+                  font-size: 1.25rem;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                ">
+                <i
+                  class="fa-brands fa-confluence"
+                  style="color: white; font-size: larger"></i>
               </div>
               <div
-                class="bg-[#3B82F6] bg-opacity-90 h-full py-4 px-5 w-full text-start text-xl text-white dm-serif text-[38px]">
+                class="dm-serif"
+                style="
+                  background-color: rgba(59, 130, 246, 0.9);
+                  padding-top: 1rem;
+                  padding-bottom: 1rem;
+                  padding-left: 1.25rem;
+                  padding-right: 1.25rem;
+                  width: 100%;
+                  text-align: start;
+                  font-size: 20px;
+                  color: #ffffff;
+                ">
                 Repairing
               </div>
             </div>
           </div>
         </div>
-        <div
-          class="flex flex-col md:flex-row justify-evenly items-center gap-5">
+        <div class="servicesRow">
           <div
-            class="mainDiv rounded-sm ease-in-out duration-300 max-w-[400px] min-h-[220px] h-full w-full aspect-video relative bg-center bg-no-repeat bg-cover overflow-hidden hover:.detailText"
+            class="mainDiv filterShadow"
             style="
               background-image: url('https://ik.imagekit.io/kipkr4n2w/Sakya_assets/imgs/ourService3.jpg?updatedAt=1724399558402');
-              filter: drop-shadow(0px 30px 60px rgba(59, 130, 246, 0.25));
             ">
-            <div
-              id="detailText"
-              class="detailText bg-[#193766] h-full bg-opacity-85 text-white p-4 leading-6 md:leading-6 text-justify absolute top-[-550px] ease-in-out duration-500">
+            <div id="detailText" class="detailText">
               We specialize in providing a diverse range of essential equipment
               to meet your business needs. From indoor and outdoor lighting to
               fire-fighting equipment, retail outlet accessories, and innovative
               medical diagnostics, we have you covered. Trust us to be your
               reliable partner.
             </div>
-            <div
-              class="flex flex-row w-full justify-start items-stretch h-fit absolute bottom-0 iconText ease-in-out duration-500">
-              <div class="bg-[#193766] h-full py-4 px-5 text-xl">
-                <i class="fa-brands fa-confluence text-white h-full"></i>
+            <div class="serviceTitleDiv">
+              <div
+                style="
+                  background-color: #193766;
+                  padding-top: 1rem;
+                  padding-bottom: 1rem;
+                  padding-left: 1.25rem;
+                  padding-right: 1.25rem;
+                  font-size: 1.25rem;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                ">
+                <i
+                  class="fa-brands fa-confluence"
+                  style="color: white; font-size: larger"></i>
               </div>
               <div
-                class="bg-[#3B82F6] bg-opacity-90 h-full py-4 px-5 w-full text-start text-xl text-white dm-serif text-[38px]">
+                class="dm-serif"
+                style="
+                  background-color: rgba(59, 130, 246, 0.9);
+                  padding-top: 1rem;
+                  padding-bottom: 1rem;
+                  padding-left: 1.25rem;
+                  padding-right: 1.25rem;
+                  width: 100%;
+                  text-align: start;
+                  font-size: 20px;
+                  color: #ffffff;
+                ">
                 Capital Equipment Trading
               </div>
             </div>
           </div>
           <div
-            class="mainDiv rounded-sm ease-in-out duration-300 max-w-[400px] min-h-[220px] h-full w-full aspect-video relative bg-center bg-no-repeat bg-cover overflow-hidden hover:.detailText"
+            class="mainDiv filterShadow"
             style="
               background-image: url('https://ik.imagekit.io/kipkr4n2w/Sakya_assets/imgs/ourService4.jpg?updatedAt=1724399147646');
-              filter: drop-shadow(0px 30px 60px rgba(59, 130, 246, 0.25));
             ">
-            <div
-              id="detailText"
-              class="detailText bg-[#193766] h-full bg-opacity-85 text-white p-4 leading-6 md:leading-6 text-justify absolute top-[-550px] ease-in-out duration-500">
+            <div id="detailText" class="detailText">
               Welcome to our Human Resources Providing service, catering to
               diverse projects such as SBM and State TPI initiatives. We offer
               customized HR solutions to meet each project's unique
               requirements, ensuring efficient workforce management.
             </div>
-            <div
-              class="flex flex-row w-full justify-start items-strach absolute bottom-0 iconText ease-in-out duration-500">
-              <div class="bg-[#193766] h-full py-4 px-5 text-xl">
-                <i class="fa-brands fa-confluence text-white h-full"></i>
+            <div class="serviceTitleDiv">
+              <div
+                style="
+                  background-color: #193766;
+                  padding-top: 1rem;
+                  padding-bottom: 1rem;
+                  padding-left: 1.25rem;
+                  padding-right: 1.25rem;
+                  font-size: 1.25rem;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                ">
+                <i
+                  class="fa-brands fa-confluence"
+                  style="color: white; font-size: larger"></i>
               </div>
               <div
-                class="bg-[#3B82F6] bg-opacity-90 h-full py-4 px-5 w-full text-start text-xl text-white dm-serif text-[38px]">
+                class="dm-serif"
+                style="
+                  background-color: rgba(59, 130, 246, 0.9);
+                  padding-top: 1rem;
+                  padding-bottom: 1rem;
+                  padding-left: 1.25rem;
+                  padding-right: 1.25rem;
+                  width: 100%;
+                  text-align: start;
+                  font-size: 20px;
+                  color: #ffffff;
+                ">
                 Human Resources Providing
               </div>
             </div>
@@ -282,43 +293,30 @@
         </div>
       </div>
     </section>
+
     <!-- about us section  -->
-    <section
-      id="about"
-      style="
-        background-image: url('https://ik.imagekit.io/kipkr4n2w/Sakya_assets/bgimg/about-BG.png?updatedAt=1724396840170');
-      "
-      class="flex flex-col justify-start items-center h-fit lg:h-[90dvh] w-screen bg-right-top bg-no-repeat bg-contain">
-      <div
-        class="w-[85%] flex flex-col lg:flex-row justify-between items-center mt-10 gap-10 h-full">
-        <div
-          class="flex flex-col justify-center gap-5 items-start h-full w-full">
-          <h2
-            class="text-[#193766] dm-sans font-bold text-[40px] md:text-[60px]">
-            About Us
-          </h2>
-          <div class="flex flex-col gap-2">
-            <p
-              class="text-[#697B98] text-[12px] md:text-[14px] text-justify font-semibold dm-sans w-full">
+    <section id="about" class="aboutSection">
+      <div class="aboutMainDiv">
+        <div class="aboutContentDiv">
+          <h2 class="aboutHeading">About Us</h2>
+          <div style="display: flex; flex-direction: column; gap: 0.5rem">
+            <p class="dm-sans aboutPera">
               Founded in 2012 SAKYA SALES has been established by seasoned
               professionals with a background and rich experience in Assessment
               and all their related and requisite activities.
             </p>
-            <p
-              class="text-[#697B98] text-[12px] md:text-[14px] text-justify font-semibold dm-sans w-full">
+            <p class="dm-sans aboutPera">
               We understand the needs and psychology of assessors, subject
               matter experts etc and have maintained a balance between their
               expectations, secrecy and confidentiality, fair and ethical
               practices and customer support service.
             </p>
-            <p
-              class="text-[#697B98] text-[12px] md:text-[14px] text-justify font-semibold dm-sans w-full">
+            <p class="dm-sans aboutPera">
               We also understand the importance of impartiality in carrying out
               its audit activities, manages conflict of interests and ensures
               the objectivity of its audit activities.
             </p>
-            <p
-              class="text-[#697B98] text-[12px] md:text-[14px] text-justify font-semibold dm-sans w-full">
+            <p class="dm-sans aboutPera">
               Our business model integrates people, technology, and innovation
               to create value for all our stakeholders. Through our integrated
               services and futuristic enablers, we focus on
@@ -328,158 +326,62 @@
               >, to bring to the table bespoke solutions.
             </p>
 
-            <p
-              class="text-[#697B98] text-[12px] md:text-[14px] text-justify font-semibold dm-sans w-full">
+            <p class="dm-sans aboutPera">
               We are an ISO-certified organization with a focus on quality and
               integrity to empower growth and drive positive change for people &
               planet.
             </p>
-            <p
-              class="text-[#697B98] text-[12px] md:text-[14px] text-justify font-semibold dm-sans w-full">
+            <p class="dm-sans aboutPera">
               Broadly Categorizing, we provide services such as Capital
               Equipment Trading , Project Consultancy, Documentary Check and
               Verification, Sampling and Analysis, Energy Audits,
               Valuations/Appraisals , etc.
             </p>
           </div>
-          <a href="#contact">
-            <button
-              class="bg-[#3B82F6] rounded-md py-2 md:py-4 text-white px-3 md:px-5 font-bold dm-sans"
-              style="
-                filter: drop-shadow(0px 30px 60px rgba(59, 130, 246, 0.25));
-              ">
-              Contact Now
-            </button>
-          </a>
+          <a href="#contact" class="filterShadow">
+            <button class="conBtn dm-sans">Contact Now</button></a
+          >
         </div>
         <div
-          class="h-[50%] lg:h-[80%] w-full object-contain flex justify-center items-center">
+          style="
+            height: 40%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          ">
           <img
-            class="h-full text-center aspect-square"
+            style="height: 100%; width: 90%; object-fit: contain"
             src="https://ik.imagekit.io/kipkr4n2w/Sakya_assets/imgs/image_2.png?updatedAt=1725011383445"
             alt="" />
         </div>
-        <!-- <div
-          class="flex flex-col justify-center items-center w-full lg:w-1/2 gap-5">
-          <div class="flex flex-row items-end justify-center gap-5">
-            <div
-              class="w-28 h-28 lg:w-38 lg:h-38 aspect-squre rounded-md overflow-hidden object-cover"
-              style="
-                filter: drop-shadow(0px 30px 60px rgba(59, 130, 246, 0.25));
-              ">
-              <img
-                src="https://ik.imagekit.io/kipkr4n2w/Sakya_assets/imgs/about1.jpg?updatedAt=1724396544684"
-                alt=""
-                class="w-full h-full object-cover" />
-            </div>
-            <div
-              class="w-52 aspect-squre rounded-md overflow-hidden object-cover"
-              style="
-                filter: drop-shadow(0px 30px 60px rgba(59, 130, 246, 0.25));
-              ">
-              <img
-                src="https://ik.imagekit.io/kipkr4n2w/Sakya_assets/imgs/about2.jpg?updatedAt=1724396543395"
-                alt=""
-                class="w-full h-full object-cover" />
-            </div>
-            <div
-              class="w-36 hidden md:block aspect-squre rounded-md overflow-hidden object-cover"
-              style="
-                filter: drop-shadow(0px 30px 60px rgba(59, 130, 246, 0.25));
-              ">
-              <img
-                src="https://ik.imagekit.io/kipkr4n2w/Sakya_assets/imgs/about3.jpg?updatedAt=1724396536299"
-                alt=""
-                class="w-full h-full object-cover" />
-            </div>
-          </div>
-          <div class="flex justify-center items-center w-full">
-            <div
-              class="w-72 lg:w-96 aspect-squre rounded-md overflow-hidden object-cover"
-              style="
-                filter: drop-shadow(0px 30px 60px rgba(59, 130, 246, 0.25));
-              ">
-              <img
-                src="https://ik.imagekit.io/kipkr4n2w/Sakya_assets/imgs/about4.png?updatedAt=1724396531624"
-                alt=""
-                class="w-full h-full object-cover" />
-            </div>
-          </div>
-        </div> -->
       </div>
     </section>
 
     <!-- deals section -->
-    <section
-      style="
-        background-image: url('https://ik.imagekit.io/kipkr4n2w/Sakya_assets/bgimg/deals_BG.png?updatedAt=1724396840811');
-      "
-      class="flex flex-col justify-start items-center mt-10 h-fit lg:h-[90dvh] w-screen bg-left-top bg-no-repeat bg-contain">
-      <div
-        class="w-[85%] flex flex-col-reverse lg:flex-row justify-evenly items-center gap-10 h-full">
-        <!-- <div class="flex flex-row justify-center items-center gap-5 w-full">
-          <div class="flex flex-col justify-center items-end gap-5">
-            <div
-              class="w-32 md:w-52 h-32 md:h-52 max-w-80 max-h-80 overflow-hidden rounded-md"
-              style="
-                filter: drop-shadow(0px 30px 60px rgba(59, 130, 246, 0.25));
-              ">
-              <img
-                src="https://ik.imagekit.io/kipkr4n2w/Sakya_assets/imgs/heroPage4.jpg?updatedAt=1724396541841"
-                alt=""
-                class="object-cover h-full w-full" />
-            </div>
-            <div
-              class="h-52 md:h-80 w-32 md:w-48 overflow-hidden rounded-md"
-              style="
-                filter: drop-shadow(0px 30px 60px rgba(59, 130, 246, 0.25));
-              ">
-              <img
-                src="https://ik.imagekit.io/kipkr4n2w/Sakya_assets/imgs/about2.jpg?updatedAt=1724396543395"
-                alt=""
-                class="object-cover h-full w-full" />
-            </div>
-          </div>
-          <div class="flex flex-col gap-5">
-            <div
-              class="w-32 md:w-52 h-64 md:h-80 overflow-hidden rounded-md"
-              style="
-                filter: drop-shadow(0px 30px 60px rgba(59, 130, 246, 0.25));
-              ">
-              <img
-                src="https://ik.imagekit.io/kipkr4n2w/Sakya_assets/imgs/heroPage1.jpg?updatedAt=1724396545809"
-                alt=""
-                class="object-cover h-full w-full" />
-            </div>
-            <div
-              class="w-32 md:w-64 h-32 md:h-52 max-w-80 max-h-80 overflow-hidden rounded-md"
-              style="
-                filter: drop-shadow(0px 30px 60px rgba(59, 130, 246, 0.25));
-              ">
-              <img
-                src="https://ik.imagekit.io/kipkr4n2w/Sakya_assets/imgs/heroPage2.jpg?updatedAt=1724396544317"
-                alt=""
-                class="object-cover h-full w-full" />
-            </div>
-          </div>
-        </div> -->
-
+    <section class="dealsSection">
+      <div class="dealsMainDiv">
         <div
-          class="h-[80%] w-full object-contain flex justify-center items-center">
+          style="
+            height: 50%;
+            width: 100%;
+            object-fit: contain;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          ">
           <img
             src="https://ik.imagekit.io/kipkr4n2w/Sakya_assets/imgs/image_3.png?updatedAt=1725011383227"
-            class="h-full aspect-square"
+            style="height: 100%; width: 70%"
             alt="" />
         </div>
-        <div class="gap-5 w-full flex flex-col justify-start items-start">
-          <h3
-            class="text-[#193766] text-[26px] lg:text-[36px] dm-serif font-bold">
-            Unlock the <span class="text-[#3B82F6]">best deals</span> and
-            <br /><span class="text-[#3B82F6]">exceptional service</span> –
+        <div class="dealsContentDiv">
+          <h3 class="dm-serif dealsHeading">
+            Unlock the <span style="color: #3b82f6">best deals</span> and
+            <br /><span style="color: #3b82f6">exceptional service</span> –
             where your<br />
             satisfaction is our top priority!"
           </h3>
-          <p class="text-[16] text-[#697B98] dm-sans">
+          <p class="dm-sans" style="color: #697b98; margin-top: 0">
             We pride ourselves on delivering high-quality products and
             exceptional <br />service that you can rely on. Trust us to provide
             innovative solutions that<br />
@@ -487,32 +389,31 @@
             satisfied<br />
             customers and experience the difference today.
           </p>
-          <ul
-            class="list-[square] list-inside text-[#3B82F6] text-[16px] font-bold flex flex-col gap-3 justify-start items-start">
+          <ul class="dealsList dm-sans">
             <li>
               Innovative solutions
-              <p class="ml-[22px] text-[#193766] font-semibold">
+              <p class="listPara">
                 Trust us to provide innovative solutions that drive your
                 business forward.
               </p>
             </li>
             <li>
               Free consultancy
-              <p class="ml-[22px] text-[#193766] font-semibold">
+              <p class="listPara">
                 Best in sales and service. We’re here to make your life easier
                 and your business thrive!"
               </p>
             </li>
             <li>
               Best Services
-              <p class="ml-[22px] text-[#193766] font-semibold">
+              <p class="listPara">
                 We excel in providing top-notch sales and services tailored to
                 meet your unique needs
               </p>
             </li>
             <li>
               Much More
-              <p class="ml-[22px] text-[#193766] font-semibold">
+              <p class="listPara">
                 Join our happy customers and experience premium products and
                 services
               </p>
@@ -521,41 +422,39 @@
         </div>
       </div>
     </section>
+
     <!-- contactus section  -->
-    <div id="contact" class="h-[10dvh]"></div>
-    <section
-      class="flex flex-col justify-center items-center h-fit lg:h-[90dvh] w-screen">
-      <div
-        style="
-          background-image: url('https://ik.imagekit.io/kipkr4n2w/Sakya_assets/bgimg/contct-BG.png?updatedAt=1724396840610');
-        "
-        class="w-screen h-fit lg:h-[90dvh] bg-center bg-cover bg-no-repeat bigdaDiv">
-        <div
-          class="w-screen flex flex-col gap-5 py-10 lg:gap-14 justify-center items-center h-fit lg:h-[90dvh] bg-[#193766] bg-opacity-90 bigdaDiv">
-          <h2 class="text-[40px] lg:text-[60px] text-white">Contact Us</h2>
-          <div
-            class="flex flex-col lg:flex-row justify-around items-center gap-10 lg:gap-28 w-[85%]">
-            <p
-              class="text-[16px] lg:text-[24px] dm-sans text-white text-justify w-full lg:w-1/2">
+    <div id="contact" style="height: 10dvh"></div>
+    <section class="contactSection">
+      <div class="bigdaDiv">
+        <div class="contactMainDiv">
+          <h2 class="contactHeading">Contact Us</h2>
+          <div class="contactDiv">
+            <p class="contactPara dm-sans">
               Unlock the best deals and exceptional service where your
               satisfaction is our top priority! "We're here to provide the
               support and answers you need for a seamless experience."
             </p>
-            <form
-              class="flex flex-col justify-center items-center gap-3 w-full mb-10 lg:mb-5 lg:w-[60%]">
-              <div class="flex flex-row w-full gap-5">
+            <form class="contactForm">
+              <div
+                style="
+                  display: flex;
+                  flex-direction: row;
+                  width: 100%;
+                  gap: 1.5rem;
+                ">
                 <input
                   type="text"
                   name="name"
                   id="name"
-                  class="w-full rounded-md py-3 font-bold dm-sans"
+                  class="formInput dm-sans"
                   placeholder="Name"
                   required />
                 <input
                   type="tel"
                   name="cContact"
                   id="cContact"
-                  class="w-full rounded-md py-3 font-bold dm-sans"
+                  class="formInput dm-sans"
                   placeholder="Mobile no."
                   minlength="10"
                   maxlength="10"
@@ -565,14 +464,14 @@
                 type="email"
                 name="email"
                 id="email"
-                class="w-full rounded-md py-3 font-bold dm-sans"
+                class="formInput dm-sans"
                 placeholder="Email"
                 required />
               <input
                 type="text"
                 name="companyName"
                 id="companyName"
-                class="w-full rounded-md py-3 font-bold dm-sans"
+                class="formInput dm-sans"
                 placeholder="Company name"
                 required />
               <textarea
@@ -581,12 +480,14 @@
                 id="message"
                 placeholder="Message"
                 required
-                class="w-full rounded-md py-3 font-bold dm-sans"></textarea>
+                class="formInput dm-sans"></textarea>
               <button
                 type="submit"
-                class="bg-[#3B82F6] w-full rounded-md py-3 font-bold dm-sans text-white"
+                class="formInput dm-sans"
                 style="
                   filter: drop-shadow(0px 30px 60px rgba(59, 130, 246, 0.25));
+                  background-color: #3b82f6;
+                  color: #fff;
                 ">
                 Submit
               </button>
@@ -595,200 +496,143 @@
         </div>
       </div>
     </section>
+
     <!-- customer review section -->
-    <section
-      style="
-        background-image: url('https://ik.imagekit.io/kipkr4n2w/Sakya_assets/bgimg/about-BG.png?updatedAt=1724396840170');
-      "
-      class="flex flex-col justify-start items-center h-fit pb-10 w-screen bg-right-top bg-no-repeat bg-contain">
-      <h2
-        class="text-[#193766] dm-sans font-bold text-[40px] md:text-[60px] mt-5">
-        What our customer says
-      </h2>
-      <div class="flex w-[85%] flex-col lg:flex-row gap-10 mt-20">
-        <div
-          style="filter: drop-shadow(0px 30px 60px rgba(59, 130, 246, 0.25))"
-          class="flex flex-col bg-[#3B82F6] bg-opacity-25 rounded-xl relative justify-evenly p-4 h-full gap-2 lg:gap-5">
-          <div
-            class="h-20 w-20 rounded-full overflow-hidden absolute top-[-40px] right-5"
-            style="filter: drop-shadow(0px 30px 60px rgba(59, 130, 246, 0.25))">
+    <!-- <section class="reviewSection">
+      <h2 class="reviewHeading dm-sans">What our customer says</h2>
+      <div class="reviewMainDiv dm-sans">
+        <div class="filterShadow reviewBox1">
+          <div class="filterShadow reviewImgBox">
             <img
-              class="w-full h-full object-cover"
+              style="height: 100%; width: 100; object-fit: cover"
               src="https://ik.imagekit.io/kipkr4n2w/Sakya_assets/imgs/user1.jpg?updatedAt=1724399956291"
               alt="" />
           </div>
-          <div class="flex flex-row">
+          <div>
             <i class="fa-solid fa-star"></i>
             <i class="fa-solid fa-star"></i>
             <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star opacity-25"></i>
-            <i class="fa-solid fa-star opacity-25"></i>
+            <i class="fa-solid fa-star" style="opacity: 0.25"></i>
+            <i class="fa-solid fa-star" style="opacity: 0.25"></i>
           </div>
-          <p class="w-fit">
+          <p style="width: fit-content; margin: 0; text-align: justify">
             Sakya Sales and Solution exceeded my expectations! Their team was
             extremely professional and attentive to our needs. They provided
             excellent guidance and support throughout our project. I highly
             recommend them to anyone looking for top-notch sales and solutions
             services.
           </p>
-          <span class="font-bold">~ Rohit Sharma </span>
+          <span style="font-weight: 700">~ Rohit Sharma </span>
         </div>
-        <div
-          style="filter: drop-shadow(0px 30px 60px rgba(59, 130, 246, 0.25))"
-          class="flex flex-col bg-[#D6F4FD] bg-opacity-1 rounded-xl relative justify-evenly p-4 h-full gap-2 lg:gap-5">
-          <div
-            class="h-20 w-20 rounded-full overflow-hidden absolute top-[-40px] lg:top-none bottom-none lg:bottom-[-30px] right-5"
-            style="filter: drop-shadow(0px 30px 60px rgba(59, 130, 246, 0.25))">
+        <div class="filterShadow reviewBox2">
+          <div class="filterShadow reviewImgBox">
             <img
-              class="w-full h-full object-cover"
+              style="height: 100%; width: 100; object-fit: cover"
               src="https://ik.imagekit.io/kipkr4n2w/Sakya_assets/imgs/user2.jpg?updatedAt=1724399957151"
               alt="" />
           </div>
-          <div class="flex flex-row">
+          <div>
             <i class="fa-solid fa-star"></i>
             <i class="fa-solid fa-star"></i>
             <i class="fa-solid fa-star"></i>
             <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star opacity-25"></i>
+            <i class="fa-solid fa-star" style="opacity: 0.25"></i>
           </div>
-          <p class="w-fit">
+          <p style="width: fit-content; text-align: justify">
             Sakya Sales and Solution is simply the best! From start to finish,
             they were incredibly efficient and professional. Their team
             understood our requirements perfectly and delivered results beyond
             our expectations. We are extremely satisfied and will be returning
             for future projects.
           </p>
-          <span class="font-bold">~ Karan Patel</span>
+          <span style="font-weight: 700">~ Karan Patel</span>
         </div>
-        <div
-          style="filter: drop-shadow(0px 30px 60px rgba(59, 130, 246, 0.25))"
-          class="flex flex-col bg-[#DE98FF] bg-opacity-25 rounded-xl relative justify-evenly p-4 h-full gap-2 lg:gap-5">
-          <div
-            class="h-20 w-20 rounded-full overflow-hidden absolute top-[-40px] right-5"
-            style="filter: drop-shadow(0px 30px 60px rgba(59, 130, 246, 0.25))">
+        <div class="filterShadow reviewBox3">
+          <div class="filterShadow reviewImgBox">
             <img
-              class="w-full h-full object-cover"
+              style="height: 100%; width: 100; object-fit: cover"
               src="https://ik.imagekit.io/kipkr4n2w/Sakya_assets/imgs/user3.jpg?updatedAt=1724399957146"
               alt="" />
           </div>
-          <div class="flex flex-row">
+          <div>
             <i class="fa-solid fa-star"></i>
             <i class="fa-solid fa-star"></i>
             <i class="fa-solid fa-star"></i>
             <i class="fa-solid fa-star"></i>
             <i class="fa-solid fa-star"></i>
           </div>
-          <p class="w-fit">
+          <p style="width: fit-content; text-align: justify">
             I've had a great experience working with Sakya Sales and Solution.
             Their customer service is outstanding, and they always go the extra
             mile to ensure satisfaction. While there were minor delays, the
             overall quality of their work was impressive. I would definitely
             work with them again.
           </p>
-          <span class="font-bold">~ Anjali Mehta</span>
+          <span style="font-weight: 700">~ Anjali Mehta</span>
         </div>
       </div>
-      <div
-        class="hidden justify-around itmes-center w-[55%] flex-col lg:flex-row gap-10 mt-20">
-        <div
-          class="flex flex-col bg-[#DE98FF] bg-opacity-25 rounded-xl relative justify-evenly p-4 h-full gap-2 lg:gap-5">
-          <div
-            class="h-20 w-20 rounded-full overflow-hidden absolute top-[-40px] right-5"
-            style="filter: drop-shadow(0px 30px 60px rgba(59, 130, 246, 0.25))">
-            <img
-              class="w-full h-full object-cover"
-              src="https://img.freepik.com/free-photo/close-up-portrait-young-bearded-man-white-shirt-jacket-posing-camera-with-broad-smile-isolated-gray_171337-629.jpg?t=st=1722001494~exp=1722005094~hmac=15c93de776bd3c9de9dee71486f2afd76f26d1a17233f9d6a41a150a9d67fe49&w=996"
-              alt="" />
-          </div>
-          <div class="flex flex-row">
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star opacity-25"></i>
-            <i class="fa-solid fa-star opacity-25"></i>
-          </div>
-          <p class="w-fit">
-            I had a positive experience with Sakya Sales and Solution. Their
-            team was knowledgeable and responsive, addressing all our concerns
-            promptly. The only reason for not giving a full five stars is that
-            we faced a slight miscommunication initially. However, they resolved
-            it quickly, and the final outcome was fantastic.
-          </p>
-          <span class="font-bold">~ Aman Verma</span>
-        </div>
-        <div
-          class="flex flex-col bg-[#3B82F6] bg-opacity-25 rounded-xl relative justify-evenly p-4 h-full gap-2 lg:gap-5">
-          <div
-            class="h-20 w-20 rounded-full overflow-hidden absolute bottom-[-30px] right-5"
-            style="filter: drop-shadow(0px 30px 60px rgba(59, 130, 246, 0.25))">
-            <img
-              class="w-full h-full object-cover"
-              src="https://img.freepik.com/free-photo/closeup-happy-joyful-guy-eyeglasses_74855-2697.jpg?t=st=1722001766~exp=1722005366~hmac=11c5bcf07c1de69345aa20dee54a1b16565500ccea148f5c2147b6a0fba74f4f&w=996"
-              alt="" />
-          </div>
-          <div class="flex flex-row">
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star opacity-25"></i>
-          </div>
-          <p class="w-fit">
-            Outstanding service from Sakya Sales and Solution! Their attention
-            to detail and commitment to quality are unparalleled. They made the
-            entire process seamless and stress-free. I highly recommend their
-            services to anyone seeking reliable and efficient sales solutions.
-          </p>
-          <span class="font-bold">~ Pankaj Dubey</span>
-        </div>
-      </div>
-    </section>
-    <!-- footer section  -->
-    <section
-      class="flex flex-col justify-center items-center relative h-fit lg:h-[50dvh] bg-right-top bg-contain bg-no-repeat w-screen bg-[#193766]">
-      <div
-        class="w-[85%] flex flex-col lg:flex-row p-4 justify-between items-start lg:items-center gap-10">
-        <div
-          class="flex flex-row w-full lg:flex-col justify-around items-center">
-          <div class="lg:w-64 h-28 lg:h-32 w-full">
-            <img
-              src="https://ik.imagekit.io/kipkr4n2w/Sakya_assets/logo.png?updatedAt=1724394479583"
-              alt=""
-              class="w-full h-full object-contain" />
-          </div>
-          <div class="text-white dm-sans w-full text-center">
-            <p class="text-xl dm-sans font-semibold">Follow Us On</p>
-            <div class="text-2xl flex flex-row justify-center gap-5">
-              <i class="fa-brands fa-facebook"></i>
-              <i class="fa-brands fa-square-x-twitter"></i>
-              <i class="fa-brands fa-square-instagram"></i>
-              <i class="fa-brands fa-linkedin"></i>
-            </div>
-          </div>
-        </div>
-        <div class="flex flex-row justify-around w-full gap-5">
-          <div>
-            <p class="text-[#C4C4C4] text-xl underline">Explore</p>
-            <ul class="text-white">
-              <li>Home</li>
-              <li>Services</li>
-              <li>Social Feeds</li>
-              <li>More Products</li>
-            </ul>
-          </div>
+    </section> -->
 
-          <div>
-            <p class="text-[#C4C4C4] text-xl underline">Company</p>
-            <ul class="text-white">
-              <li>About Us</li>
-              <li>Contact</li>
-              <li>Privacy Policy</li>
-              <li>Terms of Service</li>
-            </ul>
+    <!-- footer section  -->
+    <section class="footerSection">
+      <div class="footerMainDiv">
+        <div class="logo" style="flex: 1">
+          <img
+            src="https://ik.imagekit.io/kipkr4n2w/Sakya_assets/logo.png?updatedAt=1724394479583"
+            alt=""
+            class="logoImg" />
+        </div>
+
+        <div class="dm-sans" style="color: #fff; flex: 1">
+          <p class="dm-sans" style="font-weight: 700">Follow Us On</p>
+          <div class="text-2xl flex flex-row justify-center gap-5">
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-square-x-twitter"></i>
+            <i class="fa-brands fa-square-instagram"></i>
+            <i class="fa-brands fa-linkedin"></i>
           </div>
+        </div>
+
+        <div class="dm-sans" style="flex: 1">
+          <p
+            style="
+              color: #c4c4c4;
+              text-decoration: underline;
+              font-size: 1.25rem;
+              margin: 0;
+            ">
+            Explore
+          </p>
+          <ul
+            style="color: #fff; list-style: none; padding: 0; margin-top: 10px">
+            <li>Home</li>
+            <li>Services</li>
+            <li>Social Feeds</li>
+            <li>More Products</li>
+          </ul>
+        </div>
+
+        <div class="dm-sans" style="flex: 1">
+          <p
+            style="
+              color: #c4c4c4;
+              text-decoration: underline;
+              font-size: 1.25rem;
+              margin: 0;
+            ">
+            Company
+          </p>
+          <ul
+            style="color: #fff; list-style: none; padding: 0; margin-top: 10px">
+            <li>About Us</li>
+            <li>Contact</li>
+            <li>Privacy Policy</li>
+            <li>Terms of Service</li>
+          </ul>
         </div>
       </div>
     </section>
+
     <script
       type="text/javascript"
       src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>

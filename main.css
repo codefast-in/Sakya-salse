@@ -151,7 +151,7 @@
 }
 
 .landingSection {
-    background-image: url('https://ik.imagekit.io/kipkr4n2w/Sakya_assets/bgimg/hero-BG1.png?updatedAt=1724396839352');
+    /* background-image: url('https://ik.imagekit.io/kipkr4n2w/Sakya_assets/bgimg/hero-BG1.png?updatedAt=1724396839352'); */
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -213,7 +213,7 @@
     /* gap: 1rem; */
     height: fit-content;
     width: 100vw;
-    background-image: url('https://ik.imagekit.io/kipkr4n2w/Sakya_assets/bgimg/services-BG.png?updatedAt=1724396839376');
+    /* background-image: url('https://ik.imagekit.io/kipkr4n2w/Sakya_assets/bgimg/services-BG.png?updatedAt=1724396839376'); */
     background-position: left top;
     background-repeat: no-repeat;
     background-size: contain;
@@ -290,7 +290,7 @@
     align-items: center;
     height: fit-content;
     width: 100vw;
-    background-image: url('https://ik.imagekit.io/kipkr4n2w/Sakya_assets/bgimg/about-BG.png?updatedAt=1724396840170');
+    /* background-image: url('https://ik.imagekit.io/kipkr4n2w/Sakya_assets/bgimg/about-BG.png?updatedAt=1724396840170'); */
 
     background-position: right top;
     background-repeat: no-repeat;
@@ -344,7 +344,7 @@
     margin-top: 2.5rem;
     height: fit-content;
     width: 100vw;
-    background-image: url('https://ik.imagekit.io/kipkr4n2w/Sakya_assets/bgimg/deals_BG.png?updatedAt=1724396840811');
+    /* background-image: url('https://ik.imagekit.io/kipkr4n2w/Sakya_assets/bgimg/deals_BG.png?updatedAt=1724396840811'); */
     background-position: left top;
     background-repeat: no-repeat;
     background-size: contain;
@@ -415,7 +415,7 @@
     clip-path: polygon(0 5%, 100% 0, 100% 95%, 0% 100%);
     width: 100vw;
     height: fit-content;
-    background-image: url('https://ik.imagekit.io/kipkr4n2w/Sakya_assets/bgimg/contct-BG.png?updatedAt=1724396840610');
+    /* background-image: url('https://ik.imagekit.io/kipkr4n2w/Sakya_assets/bgimg/contct-BG.png?updatedAt=1724396840610'); */
     height: 100%;
     background-position: center;
     background-size: cover;
@@ -482,7 +482,7 @@
     height: fit-content;
     padding-bottom: 2.5rem;
     width: 100vw;
-    background-image: url('https://ik.imagekit.io/kipkr4n2w/Sakya_assets/bgimg/about-BG.png?updatedAt=1724396840170');
+    /* background-image: url('https://ik.imagekit.io/kipkr4n2w/Sakya_assets/bgimg/about-BG.png?updatedAt=1724396840170'); */
 
     background-position: right top;
     background-repeat: no-repeat;
